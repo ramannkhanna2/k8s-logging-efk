@@ -5,12 +5,7 @@ Kubernetes logging mechanism using EFK (Elastic search, Kibana and Fluentd)
 
 - Docker setup: https://docs.docker.com/engine/install/
 - Kubectl installation: https://kubernetes.io/docs/tasks/tools/
-- Minikube setup : https://minikube.sigs.k8s.io/docs/start/
 - helm setup  - https://helm.sh/docs/intro/install/
-
-- Yaml script basics
-- kubernetes basics 
-- Helm basics
 
 ```
 docker version
@@ -37,13 +32,6 @@ kubectl create namespace efk-monitoring
 ```
 helm repo add elastic https://helm.elastic.co
 helm repo update
-
-```
-
-**Step 3: Install Elasticsearch**
-
-```
-helm install elasticsearch elastic/elasticsearch --version 7.17.3 -n efk-monitoring --set replicas=1
 
 ```
 
@@ -98,29 +86,13 @@ kubectl get pods -n kube-system -w
 
 ```
 
-**Step 10: Add Dapr Helm Repository** (Optional)
 
-```
-helm repo add dapr https://dapr.github.io/helm-charts/
-helm repo update
-```
-
-
-**Step 11: Install Dapr** (Optional)
-Install Dapr with JSON formatted logs enabled:
-
-```
-helm install dapr dapr/dapr --namespace efk-monitoring --set global.logAsJson=true
-
-```
-
-
-**Step 12: Port Forward Kibana**
+**Step 12: Add nodeport instead of clusterIP**
 
 To access Kibana web interface:
 
 ```
-kubectl port-forward svc/kibana-kibana 5601 -n efk-monitoring
+k edit svc -n efk-monitoring kibana-kibana
 
 ```
 
