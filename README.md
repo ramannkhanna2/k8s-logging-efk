@@ -106,7 +106,13 @@ kubectl get svc
 
 kubectl logs <pod-name>
 
-kubectl port-forward svc/myapp 8080
+
+```
+
+
+```
+--- set index pattern as *  ,  aftr that  kubernetes.namespace_name : default or any other filters and test log centralization..
+
 
 ```
 
