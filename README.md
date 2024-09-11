@@ -12,11 +12,8 @@ docker version
 
 kubectl version
 
-minikube version
-
 helm version
 
-minikube start
 ```
 
 ### Implementation
@@ -94,6 +91,8 @@ To access Kibana web interface:
 ```
 k edit svc -n efk-monitoring kibana-kibana
 
+
+-- go to stack management , set the index and then go to discover 
 ```
 
 **Step13: Deploy the sample application**
