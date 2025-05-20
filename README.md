@@ -92,7 +92,7 @@ To access Kibana web interface:
 k edit svc -n efk-monitoring kibana-kibana
 
 
--- go to stack management , set the index and then go to discover 
+
 ```
 
 **Step13: Deploy the sample application**
@@ -111,7 +111,9 @@ kubectl logs <pod-name>
 
 
 ```
---- set index pattern as *  ,  aftr that  kubernetes.namespace_name : default or any other filters and test log centralization..
+
+-- go to stack management , set the index and then go to discover 
+--- set index pattern as *  , go to discover ,  aftr that  kubernetes.namespace_name : default or any other filters and test log centralization..
 
 
 ```
